@@ -93,6 +93,7 @@ const ProductEditScreen = ({ match, history }) => {
         countInStock,
       })
     );
+    window.history.push("/admin/productList")
   };
 
   return (

@@ -89,13 +89,13 @@ const ProductScreen = ({ history, match }) => {
                 <ListGroup.Item>
                   <Rating
                     value={product.rating}
-                    text={`${product.numReviews}reviews`}
+                    text={` \n ${product.numReviews} reviews`}
                   />
                 </ListGroup.Item>
 
                 <ListGroup.Item>price:${product.price}</ListGroup.Item>
                 <ListGroup.Item>
-                  Description:{product.description}
+                  Description: {product.description}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
@@ -122,7 +122,7 @@ const ProductScreen = ({ history, match }) => {
                   {product.countInStock > 0 && (
                     <ListGroup.Item>
                       <Row>
-                        <Col>Qty</Col>
+                        <Col>Qty:</Col>
                         <Col>
                           <Form.Control
                             as='select'
@@ -144,7 +144,7 @@ const ProductScreen = ({ history, match }) => {
                   <ListGroup.Item>
                     <Button
                       className='btn-block'
-                      onClick={() => addToCartHandler(product.id)}
+                      onClick={() => addToCartHandler(product._id)}
                       type='button'
                       disabled={product.countInStock === 0}
                     >
